@@ -1,0 +1,29 @@
+#include "pch.h"
+#include <stdio.h> 
+#define N 10 
+
+int main()
+{
+	int mas[N];
+	int s, max, tmp, tmp1, i, n;
+	for (i = 0; i < N; i++)
+	scanf_s("%d" , &mas[i]);
+	max = (-1);
+	for (i = 0; i < N; i++)
+	{
+		tmp = mas[i];
+		s = 0;
+		while (tmp > 0)
+		{
+			tmp1 = tmp % 10;
+			tmp /= 10;
+			s =s+ tmp1;
+		}
+		if (s > max)
+			max = s;
+			s = 0;
+	}
+	printf(" %d\n ", max);
+	return 0;
+
+}
